@@ -1,0 +1,59 @@
+﻿<luar-crud crud="ctrl" title="Cadastro de Pessoas">
+
+    <luar-list list="ctrl.lista" ng-show="!Cadastro">
+        <column id="id" title="Código" searchable="true"></column>
+        <column id="NOME" title="Nome" searchable="true"></column>
+        <column id="DOCUMENTO" title="Documento" searchable="true"></column>
+        <column id="ATIVO" title="Ativo" searchable="true"></column>
+        <luar-table></luar-table>
+    </luar-list>
+
+    <luar-main-form ng-show="Cadastro">
+        <tabset>
+            <tab heading="Dados Gerais">
+                <tab-heading> Dados Gerais </tab-heading>
+                <fieldset>
+                    <div class="row">
+                        <luar-text container-class="col-md-2" label="Código" name="codigo" readonly
+                                   ng-model="ctrl.currentRecord.id"></luar-text>
+                    </div>
+
+                    <div class="row">
+                        <luar-text container-class="col-md-10" label="Nome" name="nome" maxlength="120"
+                                   required
+                                   ng-model="ctrl.currentRecord.NOME"></luar-text>
+                    </div>
+
+                    <div class="row">
+                        <luar-text container-class="col-md-4" label="Documento" name="documento"
+                                   maxlength="15" required
+                                   ng-model="ctrl.currentRecord.DOCUMENTO"></luar-text>
+                    </div>
+
+                    <div class="row">
+                        <luar-select container-class="col-md-3" label="Tipo" name="TIPO" required
+                                     ng-options="item.id as item.NOME  for item in ::ctrl.TipoLook"
+                                     ng-model="ctrl.currentRecord.TIPO">
+                        </luar-select>
+                    </div>
+
+                    <div class="row">
+                        <luar-Textarea container-class="col-md-6" label="Observações" name="OBS" maxlength="250"
+                                       ng-model="ctrl.currentRecord.OBS"></luar-Textarea>
+                    </div>
+
+                    <div class="row">
+                        <input luar-check label="Ativo" ng-false-value="'N'" ng-true-value="'S'"
+                               ng-model="ctrl.currentRecord.ATIVO" />
+                    </div>
+
+                </fieldset>
+            </tab>
+        </tabset>
+    </luar-main-form>
+
+</luar-crud>
+
+
+
+
