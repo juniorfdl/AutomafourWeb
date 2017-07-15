@@ -20,10 +20,14 @@
         [Required]
         public string DOCUMENTO { get; set; }
         public string CEMP { get; set; }
-        [Required]
         public string TIPO { get; set; }
         public string ATIVO { get; set; }
         public string OBS { get; set; }
-        public int? COD_CADAPARTAMENTO { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
+        [Display(Name = "Data de Autorização")]
+        public DateTime DATA_AUTORIZACAO { get; set; }
+        public string OBS_AUTORIZACAO { get; set; }
+
     }
 }

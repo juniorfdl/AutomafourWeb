@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" ui-sref="home">
-                <img src="app/Logo.jpg" style="display: inline-block; width: 43px; height: 32px" />
+                <img src="app/icon-196.png" style="display: inline-block; width: 43px; height: 32px" />
             </a>
         </div>
 
@@ -25,31 +25,9 @@
                     </ul>
                 </li>
 
-                <li ng-if="ADMIN" class="dropdown" dropdown>
-                    <a href="#" class="dropdown-toggle" dropdown-toggle>Cadastros<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a ui-sref="cad_apartamento" menu-item="cad_apartamento">Apartamentos</a>
-                        </li>
-
-                        <li>
-                            <a ui-sref="cad_pessoa" menu-item="cad_pessoa">Pessoas</a>
-                        </li>
-
-                        <li>
-                            <a ui-sref="cad_veiculo" menu-item="cad_veiculo">Veículos</a>
-                        </li>                        
-                    </ul>
-                </li>
-
                 <li class="dropdown" dropdown>
-                    <a href="#" class="dropdown-toggle" dropdown-toggle>Portaria<span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a ui-sref="mov_entrada" menu-item="mov_entrada">Entradas</a>
-                        </li>                        
-                    </ul>
-                </li>               
+                    <a ui-sref="cad_pessoa" menu-item="cad_pessoa">Clientes</a>
+                </li>                             
 
             </ul>
 

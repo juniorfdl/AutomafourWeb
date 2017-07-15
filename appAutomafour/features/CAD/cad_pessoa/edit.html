@@ -1,4 +1,4 @@
-﻿<luar-crud crud="ctrl" title="Cadastro de Pessoas">
+﻿<luar-crud crud="ctrl" title="Cadastro de Clientes">
 
     <luar-list list="ctrl.lista" ng-show="!Cadastro">
         <column id="id" title="Código" searchable="true"></column>
@@ -31,15 +31,21 @@
                     </div>
 
                     <div class="row">
-                        <luar-select container-class="col-md-3" label="Tipo" name="TIPO" required
-                                     ng-options="item.id as item.NOME  for item in ::ctrl.TipoLook"
-                                     ng-model="ctrl.currentRecord.TIPO">
-                        </luar-select>
+                        <luar-Textarea container-class="col-md-6" label="Observações Gerais" name="OBS" maxlength="250"
+                                       ng-model="ctrl.currentRecord.OBS"></luar-Textarea>
+                    </div>
+                    
+                    <div class="row">
+                        <luar-textdata container-class="col-md-2" label="Autorização Até"
+                                       name="DATA_ENTREGA" type="date" 
+                                       ng-model="ctrl.currentRecord.DATA_AUTORIZACAO" wt-iso-date>
+                        </luar-textdata>
                     </div>
 
                     <div class="row">
-                        <luar-Textarea container-class="col-md-6" label="Observações" name="OBS" maxlength="250"
-                                       ng-model="ctrl.currentRecord.OBS"></luar-Textarea>
+                        <luar-Textarea container-class="col-md-6" label="Observações de Autorização" name="OBS" maxlength="250"
+                                       ng-model="ctrl.currentRecord.OBS_AUTORIZACAO">
+                        </luar-Textarea>
                     </div>
 
                     <div class="row">

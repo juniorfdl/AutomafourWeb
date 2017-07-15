@@ -19,8 +19,6 @@ var App;
                 this.api = api;
                 this.crudSvc = CrudCad_PessoaService;
                 this.lista = lista;
-
-                _this.TipoLook = [{ id: '1', NOME: 'Morador Titular' }, { id: '2', NOME: 'Morador' }, { id: '3', NOME: 'Visitante' }];
             }
 
             CrudCad_PessoaCtrl.prototype.crud = function () {
@@ -32,6 +30,7 @@ var App;
 
             CrudCad_PessoaCtrl.prototype.execAposNovo = function () {
                 this.currentRecord.ATIVO = "S";
+                this.currentRecord.TIPO = "C";
             };
 
             return CrudCad_PessoaCtrl;
