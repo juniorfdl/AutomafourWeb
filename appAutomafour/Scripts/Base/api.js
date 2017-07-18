@@ -33,7 +33,7 @@ var App;
              * @param baseUrl   Prefixo das APIs no back-end.
              */
             ApiProvider.prototype.setBaseUrl = function (baseUrl) {
-                this.baseUrl = baseUrl;
+                this.baseUrl = baseUrl.toString().toLowerCase();
             };
             /**
              * @private
