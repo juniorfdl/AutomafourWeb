@@ -28,6 +28,7 @@
         [Display(Name = "Data de Autorização")]
         public DateTime DATA_AUTORIZACAO { get; set; }
         public string OBS_AUTORIZACAO { get; set; }
+        public int? DIAS_AVISO { get; set; }
 
     }
 }

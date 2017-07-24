@@ -19,6 +19,12 @@ var App;
                 this.api = api;
                 this.crudSvc = CrudCad_PessoaService;
                 this.lista = lista;
+
+                this.Add30Dias = function () {
+                    var CurrentDate = new Date();
+                    CurrentDate.setMonth(CurrentDate.getMonth() + 1);                    
+                    this.currentRecord.DATA_AUTORIZACAO = CurrentDate;
+                };                
             }
 
             CrudCad_PessoaCtrl.prototype.crud = function () {

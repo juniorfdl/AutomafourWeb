@@ -5,7 +5,8 @@
         <column id="NOME" title="Nome" searchable="true"></column>
         <column id="DOCUMENTO" title="Autorização Até" searchable="true"></column>
         <column id="DATA_AUTORIZACAO" title="Documento" type="date"></column>
-        <column id="ATIVO" title="Ativo" searchable="true"></column>
+        <column id="DIAS_AVISO" title="Dias Aviso"></column>
+        <column id="ATIVO" title="Ativo" searchable="true"></column>                
         <luar-table></luar-table>
     </luar-list>
 
@@ -35,12 +36,25 @@
                         <luar-Textarea container-class="col-md-6" label="Observações Gerais" name="OBS" maxlength="250"
                                        ng-model="ctrl.currentRecord.OBS"></luar-Textarea>
                     </div>
-                    
+
                     <div class="row">
+                        
                         <luar-textdata container-class="col-md-2" label="Autorização Até"
-                                       name="DATA_ENTREGA" type="date" 
+                                       name="DATA_AUTORIZACAO" type="date"
                                        ng-model="ctrl.currentRecord.DATA_AUTORIZACAO" wt-iso-date>
                         </luar-textdata>
+
+                        <button class="form-group btn btn-primary" style="margin-top:20px; margin-left:15px" ng-click="ctrl.Add30Dias()"
+                                type="reset" unsaved-warning-clear="">
+                            Add + 30 Dias
+                        </button>
+                    </div>
+
+                    <div class="row">
+                        <luar-text container-class="col-md-2" label="Dias Aviso"
+                                   name="DIAS_AVISO" type="number"
+                                   ng-model="ctrl.currentRecord.DIAS_AVISO">
+                        </luar-text>
                     </div>
 
                     <div class="row">
