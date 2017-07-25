@@ -275,9 +275,12 @@ var App;
             CrudBaseEditCtrl.prototype.registroAtualizado = function () { };
             CrudBaseEditCtrl.prototype.internalSalvar = function () {
                 var _this = this;
+                
+                var promise = this.prepararParaSalvar();
+
                 if (this.mainForm.$pristine)
                     return null;
-                var promise = this.prepararParaSalvar();
+
                 return this.$q.when(promise).then(function (result) {
                     return _this.crudSvc.salvar(_this.currentRecord)
                         .then(function (result) {
@@ -301,6 +304,7 @@ var App;
             }
 
             CrudBaseEditCtrl.prototype.salvar = function () {
+                debugger;
                 if (this.execAntesSalvar()) {
                     var _this = this;
                     this.mensagens.limpar();

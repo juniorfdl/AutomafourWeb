@@ -24,6 +24,7 @@ var App;
                     var CurrentDate = new Date();
                     CurrentDate.setMonth(CurrentDate.getMonth() + 1);                    
                     this.currentRecord.DATA_AUTORIZACAO = CurrentDate;
+                    this.mainForm.$setDirty();
                 };                
             }
 
@@ -32,6 +33,8 @@ var App;
             };
 
             CrudCad_PessoaCtrl.prototype.prepararParaSalvar = function () {
+                this.mainForm.$setDirty();
+                this.mainForm.$pristine = false;
             };
 
             CrudCad_PessoaCtrl.prototype.execAposNovo = function () {
