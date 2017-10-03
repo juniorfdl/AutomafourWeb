@@ -3,8 +3,8 @@
     <luar-list list="ctrl.lista" ng-show="!Cadastro">
         <column id="id" title="Código" searchable="true"></column>
         <column id="NOME" title="Nome" searchable="true"></column>
-        <column id="DOCUMENTO" title="Autorização Até" searchable="true"></column>
-        <column id="DATA_AUTORIZACAO" title="Documento" type="date"></column>
+        <column id="DOCUMENTO" title="Documento" searchable="true"></column>
+        <column id="DATA_AUTORIZACAO" title="Autorização Até" type="date"></column>
         <column id="DIAS_AVISO" title="Dias Aviso"></column>
         <column id="ATIVO" title="Ativo" searchable="true"></column>                
         <luar-table></luar-table>
@@ -46,7 +46,7 @@
 
                         <button class="form-group btn btn-primary" style="margin-top:20px; margin-left:15px" ng-click="ctrl.Add30Dias()"
                                 type="reset" unsaved-warning-clear="" ng-pristine>
-                            Add + 30 Dias
+                            Add + 60 Dias
                         </button>
                     </div>
 

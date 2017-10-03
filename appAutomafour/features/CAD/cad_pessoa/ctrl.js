@@ -22,7 +22,7 @@ var App;
 
                 this.Add30Dias = function () {
                     var CurrentDate = new Date();
-                    CurrentDate.setMonth(CurrentDate.getMonth() + 1);                    
+                    CurrentDate.setMonth(CurrentDate.getMonth() + 2);                    
                     this.currentRecord.DATA_AUTORIZACAO = CurrentDate;
                     this.mainForm.$setDirty();
                 };                
