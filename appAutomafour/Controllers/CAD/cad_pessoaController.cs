@@ -25,11 +25,31 @@
         {
             CAD_PESSOA item = db.CAD_PESSOA.Where(w => w.DOCUMENTO == doc).FirstOrDefault();
 
-            //if (item == null)
-            //{
-            //    return NotFound();
-            //}
+            if (item == null)
+            {
+                return Content(HttpStatusCode.NotFound, new { mensagem_erro = "Cliente não localizado: " + doc});
+            }
+            
+            /*if (item.VERSAO_ATUAL == null || item.VERSAO_ATUAL == string.Empty)
+            {
+              item.DEVE_ATUALIZAR = "S";
+            }
+            else {
+                CAD_PESSOAVERSAO versao = db.CAD_PESSOAVERSAO
+                    .Where(m => m.id.ToString() == item.VERSAO_ATUAL)
+                    .FirstOrDefault();
 
+                CAD_PESSOAVERSAO ultversao = db.CAD_PESSOAVERSAO
+                  .Where(m => m.NOME_APP.ToUpper() == versao.NOME_APP.ToUpper())
+                  .OrderByDescending(e => e.id).FirstOrDefault();
+
+                if (versao.id != ultversao.id)
+                {
+                    item.DEVE_ATUALIZAR = "S";
+                }                
+            }
+            */            
+            
             return Ok(item);
         }
 

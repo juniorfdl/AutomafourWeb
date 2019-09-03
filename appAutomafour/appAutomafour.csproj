@@ -208,6 +208,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CAD\cad_pessoaversaoController.cs" />
+    <Compile Include="Controllers\CAD\cad_versaoController.cs" />
     <Compile Include="Controllers\CAD\cad_pessoaController.cs" />
     <Compile Include="Controllers\CAD\cad_empresaController.cs" />
     <Compile Include="Controllers\SIS\sis_menuController.cs" />
@@ -227,6 +229,8 @@
     <Compile Include="Infra\Interface\IEntidadeBase.cs" />
     <Compile Include="Models\CAD\CAD_PESSOA.cs" />
     <Compile Include="Models\CAD\CAD_EMPRESA.cs" />
+    <Compile Include="Models\CAD\CAD_PESSOAVERSAO.cs" />
+    <Compile Include="Models\CAD\CAD_VERSAO.cs" />
     <Compile Include="Models\SIS\SIS_MENU.cs" />
     <Compile Include="Models\SIS\SIS_USUARIO.cs" />
     <Compile Include="Models\SIS\SIS_USUARIO_EMPRESA.cs" />

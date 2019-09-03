@@ -6,7 +6,8 @@
         <column id="DOCUMENTO" title="Documento" searchable="true"></column>
         <column id="DATA_AUTORIZACAO" title="Autorização Até" type="date"></column>
         <column id="DIAS_AVISO" title="Dias Aviso"></column>
-        <column id="ATIVO" title="Ativo" searchable="true"></column>                
+        <column id="ATIVO" title="Ativo" searchable="true"></column>   
+        <column id="ATUALIZAR_VERSAO" title="Atualizar Versão" searchable="true"></column>             
         <luar-table></luar-table>
     </luar-list>
 
@@ -66,6 +67,11 @@
                     <div class="row">
                         <input luar-check label="Ativo" ng-false-value="'N'" ng-true-value="'S'"
                                ng-model="ctrl.currentRecord.ATIVO" />
+                    </div>
+
+                    <div class="row">
+                        <input luar-check label="Atualizar Versão" ng-false-value="'N'" ng-true-value="'S'"
+                               ng-model="ctrl.currentRecord.ATUALIZAR_VERSAO" />
                     </div>
 
                 </fieldset>

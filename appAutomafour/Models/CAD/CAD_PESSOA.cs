@@ -29,6 +29,6 @@
         public DateTime DATA_AUTORIZACAO { get; set; }
         public string OBS_AUTORIZACAO { get; set; }
         public int? DIAS_AVISO { get; set; }
-
+        public string ATUALIZAR_VERSAO { get; set; }
     }
 }

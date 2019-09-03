@@ -48,7 +48,8 @@ namespace Infra.Base
         #region Entidades tipo Cadastros        
         public virtual DbSet<CAD_EMPRESA> CAD_EMPRESA { get; set; }
         public virtual DbSet<CAD_PESSOA> CAD_PESSOA { get; set; }
+        public virtual DbSet<CAD_VERSAO> CAD_VERSAO { get; set; }
+        public virtual DbSet<CAD_PESSOAVERSAO> CAD_PESSOAVERSAO { get; set; }
         #endregion
-
     }
 }
