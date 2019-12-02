@@ -208,6 +208,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\CAD\v_cad_pessoaversaoController.cs" />
     <Compile Include="Controllers\CAD\cad_pessoaversaoController.cs" />
     <Compile Include="Controllers\CAD\cad_versaoController.cs" />
     <Compile Include="Controllers\CAD\cad_pessoaController.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="Infra\Interface\IEntidadeBase.cs" />
     <Compile Include="Models\CAD\CAD_PESSOA.cs" />
     <Compile Include="Models\CAD\CAD_EMPRESA.cs" />
+    <Compile Include="Models\CAD\V_CAD_PESSOAVERSAO.cs" />
     <Compile Include="Models\CAD\CAD_PESSOAVERSAO.cs" />
     <Compile Include="Models\CAD\CAD_VERSAO.cs" />
     <Compile Include="Models\SIS\SIS_MENU.cs" />
@@ -261,6 +263,12 @@
     <Content Include="features\CAD\cad_empresa\ctrl.js" />
     <Content Include="features\CAD\cad_empresa\edit.html" />
     <Content Include="features\CAD\cad_empresa\services.js" />
+    <Content Include="features\CAD\v_cad_pessoaversao\ctrl.js" />
+    <Content Include="features\CAD\v_cad_pessoaversao\edit.html" />
+    <Content Include="features\CAD\v_cad_pessoaversao\services.js" />
+    <Content Include="features\CAD\cad_pessoaversao\ctrl.js" />
+    <Content Include="features\CAD\cad_pessoaversao\edit.html" />
+    <Content Include="features\CAD\cad_pessoaversao\services.js" />
     <Content Include="features\CAD\cad_pessoa\ctrl.js" />
     <Content Include="features\CAD\cad_pessoa\edit.html" />
     <Content Include="features\CAD\cad_pessoa\services.js" />

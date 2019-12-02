@@ -9,22 +9,18 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class CAD_PESSOAVERSAO : IEntidadeBase
+    public class V_CAD_PESSOAVERSAO : IEntidadeBase
     {
         [Key]
         [Column("COD_CADPESSOAVERSAO")]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
-        public int COD_CADVERSAO { get; set; }
-        public int COD_CADPESSOA { get; set; }   
+        public string CLIENTE { get; set; }
+        public string VERSAO { get; set; }   
         public string DADOS_MAQUINA { get; set; }   
         public string TERMINAL { get; set; }
         public DateTime DATA { get; set; }
         [NotMapped]
         public string CEMP { get; set; }
-        [NotMapped]
-        public String VERSAO { get; set; }
-        [NotMapped]
-        public String CLIENTE { get; set; }
     }
 }

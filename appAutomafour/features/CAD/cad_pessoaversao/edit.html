@@ -1,0 +1,28 @@
+﻿<luar-crud crud="ctrl" title="Cadastro de Clientes">
+
+    <luar-list list="ctrl.lista" ng-show="!Cadastro">
+        <column id="id" title="Código" searchable="true"></column>
+        <column id="CLIENTE" title="Cliente" searchable="true"></column>
+        <column id="VERSAO" title="Versão" searchable="true"></column>
+        <column id="DADOS_MAQUINA" title="Máquina" type="date"></column>
+        <column id="TERMINAL" title="Terminal"></column>      
+        <column id="DATA" title="Data"></column>          
+        <luar-table></luar-table>
+    </luar-list>
+
+    <luar-main-form ng-show="Cadastro">
+        <tabset>
+            <tab heading="Dados Gerais">
+                <tab-heading> Dados Gerais </tab-heading>
+                <fieldset>                   
+
+                </fieldset>
+            </tab>
+        </tabset>
+    </luar-main-form>
+
+</luar-crud>
+
+
+
+

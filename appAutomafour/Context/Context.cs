@@ -50,6 +50,7 @@ namespace Infra.Base
         public virtual DbSet<CAD_PESSOA> CAD_PESSOA { get; set; }
         public virtual DbSet<CAD_VERSAO> CAD_VERSAO { get; set; }
         public virtual DbSet<CAD_PESSOAVERSAO> CAD_PESSOAVERSAO { get; set; }
+        public virtual DbSet<V_CAD_PESSOAVERSAO> v_CAD_PESSOAVERSAO { get; set; }
         #endregion
     }
 }

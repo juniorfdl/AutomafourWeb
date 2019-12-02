@@ -48,7 +48,11 @@
 
             if (cadversao.VERSAO != versao)
             {
-                return Content(HttpStatusCode.NotFound, new { mensagem_erro = "Cliente nao atualizado: " + doc });
+                return Content(HttpStatusCode.NotFound, 
+                    new { mensagem_erro = "Cliente nao atualizado: " + doc,
+                          COD_CADPESSOA = cadpessoa.id,
+                          COD_CADVERSAO = cadversao.id }
+                    );
             }
 
             CAD_PESSOAVERSAO cadpessoaversao = new CAD_PESSOAVERSAO();
@@ -67,7 +71,6 @@
 
             return Ok(cadpessoaversao);
         }
-       
 
     }
 

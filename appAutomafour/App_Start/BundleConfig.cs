@@ -57,17 +57,22 @@ namespace appBase
                 "~/features/SIS/Sis_Usuario/services.js",
                 "~/features/CAD/cad_empresa/ctrl.js",
                 "~/features/CAD/cad_empresa/services.js",
-                "~/features/CAD/cad_apartamento/ctrl.js",
-                "~/features/CAD/cad_apartamento/services.js",
 
                 "~/features/CAD/cad_pessoa/ctrl.js",
                 "~/features/CAD/cad_pessoa/services.js",
 
-                "~/features/CAD/cad_veiculo/ctrl.js",
-                "~/features/CAD/cad_veiculo/services.js",
+                "~/features/CAD/cad_pessoaversao/ctrl.js",
+                "~/features/CAD/cad_pessoaversao/services.js",
+                "~/features/CAD/v_cad_pessoaversao/ctrl.js",
+                "~/features/CAD/v_cad_pessoaversao/services.js"
 
-                "~/features/MOV/mov_entrada/ctrl.js",
-                "~/features/MOV/mov_entrada/services.js"
+                /* "~/features/CAD/cad_veiculo/ctrl.js",
+                 "~/features/CAD/cad_veiculo/services.js",
+
+                 "~/features/MOV/mov_entrada/ctrl.js",
+                 "~/features/MOV/mov_entrada/services.js"
+
+                 */
 
                 ));
         }
