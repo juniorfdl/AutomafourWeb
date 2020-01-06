@@ -197,6 +197,7 @@ begin
   end;
 
   fDadosConf := TDadosConf.New(ExtractFilePath(ParamStr(0))+'\Conf.Json');
+  
 end;
 
 class function TAtualizarVersaoFacade.New(const pDocCliente, pApp: String):IAtualizarVersaoInterfaces;
