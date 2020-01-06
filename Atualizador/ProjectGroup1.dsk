@@ -1,58 +1,52 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\SOURCE\RTL\SYS\System.pas',0,1,24372,1,24387,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\rtl\common\System.JSON.pas',0,1,1302,48,1302,0,0,,
-File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\rtl\win\Winapi.ShellAPI.pas',0,1,16,36,25,0,0,,
-File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\SOURCE\VCL\Vcl.Controls.pas',0,1,9838,1,9853,0,0,,
-File_4=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas',0,1,1,14,10,0,0,,
-File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Core\IdIOHandler.pas',0,1,2048,1,2068,0,0,,
-File_6=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Protocols\IdFTP.pas',0,1,1587,34,1603,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Core\IdTCPConnection.pas',0,1,375,64,385,0,0,,
-File_8=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Eventos.pas',0,1,1,59,6,0,0,,
-File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\System\IdComponent.pas',0,1,56,17,58,0,0,,
-File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Protocols\IdExplicitTLSClientServerBase.pas',0,1,100,38,111,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Core\IdTCPClient.pas',0,1,144,31,156,0,0,,
-File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\data\rest\REST.Client.pas',0,1,2958,1,2973,0,0,,
-File_13=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.SmartPointer.pas',0,1,79,1,94,0,0,,
+File_0=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\data\rest\REST.Client.pas',0,1,2958,1,2973,0,0,,
+File_1=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas',0,1,54,1,69,0,0,,
+File_2=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\SOURCE\RTL\SYS\System.pas',0,1,17798,1,17813,0,0,,
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Protocols\IdFTP.pas',0,1,723,9,735,0,0,,
+File_4=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\SOURCE\VCL\Vcl.Controls.pas',0,1,9841,1,9856,0,0,,
+File_5=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Core\IdIOHandler.pas',0,1,2048,1,2063,0,0,,
+File_6=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas',0,1,1,1,12,0,0,,
+File_7=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas',0,1,1,22,8,0,0,,
+File_8=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\rtl\common\System.JSON.pas',0,1,1302,48,1302,0,0,,
+File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\rtl\win\Winapi.ShellAPI.pas',0,1,16,36,25,0,0,,
+File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\18.0\source\Indy10\Core\IdTCPConnection.pas',0,1,375,64,385,0,0,,
+File_11=TSourceModule,'C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Eventos.pas',0,1,1,59,6,0,0,,
 
 [Modules]
-Module0=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj
-Module1=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas
-Module2=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
-Module3=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas
-Module4=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dproj
-Module5=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas
-Module6=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas
-Module7=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas
-Count=8
+Module0=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
+Module1=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj
+Module2=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas
+Module3=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Impl.pas
+Module4=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas
+Module5=default.htm
+Module6=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dproj
+Count=7
 EditWindowCount=1
-
-[C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj]
-ModuleType=TBaseProject
-
-[C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas]
-ModuleType=TSourceModule
 
 [C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas]
 ModuleType=TSourceModule
 
-[C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas]
-ModuleType=TSourceModule
-
-[C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dproj]
+[C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj]
 ModuleType=TBaseProject
 
-[C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas]
+[C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas]
+ModuleType=TSourceModule
+
+[C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Impl.pas]
 ModuleType=TSourceModule
 
 [C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas]
 ModuleType=TSourceModule
 
-[C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas]
-ModuleType=TSourceModule
+[default.htm]
+ModuleType=TURLModule
+
+[C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dproj]
+ModuleType=TBaseProject
 
 [EditWindow0]
-ViewCount=8
-CurrentEditView=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dpr
+ViewCount=7
+CurrentEditView=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
 View0=0
 View1=1
 View2=2
@@ -60,7 +54,6 @@ View3=3
 View4=4
 View5=5
 View6=6
-View7=7
 PercentageSizes=1
 Create=1
 Visible=1
@@ -92,100 +85,80 @@ TabDockBottomClients=MessageView=0
 TabDockRightClients=DockSite2=0,DockSite4=1
 
 [View0]
-CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dpr
-CursorX=1
-CursorY=38
-TopLine=19
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dpr
+CustomEditViewType=TWelcomePageView
+WelcomePageURL=bds:/default.htm
 
 [View1]
 CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
-CursorX=1
-CursorY=140
-TopLine=116
-LeftCol=1
-Elisions=
-Bookmarks={1,80,43}{2,65,18}
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
-
-[View2]
-CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas
-CursorX=22
-CursorY=8
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas
-
-[View3]
-CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas
-CursorX=1
-CursorY=44
-TopLine=29
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas
-
-[View4]
-CustomEditViewType=TEditView
 Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dpr
-CursorX=122
+CursorX=1
 CursorY=23
-TopLine=19
+TopLine=10
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dpr
 
-[View5]
+[View2]
 CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas
-CursorX=1
-CursorY=105
-TopLine=84
+Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
+CursorX=32
+CursorY=330
+TopLine=309
 LeftCol=1
 Elisions=
-Bookmarks=
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas
+Bookmarks={1,335,5}{2,335,5}{3,335,5}
+EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas
 
-[View6]
+[View3]
 CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas
+Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas
 CursorX=5
 CursorY=14
 TopLine=1
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas
+EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas
 
-[View7]
+[View4]
 CustomEditViewType=TEditView
-Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas
-CursorX=37
-CursorY=60
-TopLine=57
+Module=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Impl.pas
+CursorX=74
+CursorY=83
+TopLine=67
 LeftCol=1
 Elisions=
 Bookmarks=
-EditViewName=Borland.FormDesignerView
+EditViewName=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Impl.pas
+
+[View5]
+CustomEditViewType=TEditView
+Module=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas
+CursorX=3
+CursorY=62
+TopLine=51
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas
+
+[View6]
+CustomEditViewType=TEditView
+Module=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dpr
+CursorX=3
+CursorY=19
+TopLine=13
+LeftCol=1
+Elisions=
+Bookmarks=
+EditViewName=C:\ProjetosWeb\Automafour\Atualizador\GravarVersao\GravarVersao.dpr
 
 [UndockedDesigner]
 Count=0
 
 [Watches]
-Count=2
-Watch0='fObjectToFree.classname',256,0,18,1,0,'Watches',1
-Watch1='fObjectToFree',256,0,18,1,0,'Watches',1
+Count=0
 
 [WatchWindow]
 WatchColumnWidth=120
@@ -209,9 +182,7 @@ Dockable=1
 StayOnTop=0
 
 [Breakpoints]
-Count=2
-Breakpoint0='C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas',69,'',0,1,'',1,0,0,'',1,'','','',0,''
-Breakpoint1='C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas',105,'',0,1,'',1,0,0,'',1,'','','',0,''
+Count=0
 
 [EmbarcaderoWin32Debugger_AddressBreakpoints]
 Count=0
@@ -259,12 +230,12 @@ Docked=1
 State=0
 Left=0
 Top=0
-Width=1881
-Height=8132
+Width=1999
+Height=7857
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1881
-ClientHeight=8132
+ClientWidth=1999
+ClientHeight=7857
 TBDockHeight=5907
 LRDockWidth=2350
 Dockable=1
@@ -276,13 +247,13 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=0
-Top=728
-Width=2767
+Left=1
+Top=27
+Width=9985
 Height=1387
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=2767
+ClientWidth=9985
 ClientHeight=1387
 TBDockHeight=1387
 LRDockWidth=2767
@@ -827,14 +798,14 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=1366
-Top=83
+Left=4
+Top=24
 Width=1999
-Height=9011
+Height=8201
 MaxLeft=-1
 MaxTop=-1
-ClientWidth=1881
-ClientHeight=8475
+ClientWidth=1999
+ClientHeight=8201
 TBDockHeight=9011
 LRDockWidth=1999
 Dockable=1
@@ -892,5 +863,5 @@ ActiveTabID=ToolForm
 TabDockClients=ToolForm,TemplateView
 
 [ActiveProject]
-ActiveProject=3
+ActiveProject=2
 

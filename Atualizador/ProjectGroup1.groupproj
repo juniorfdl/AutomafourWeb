@@ -3,9 +3,6 @@
         <ProjectGuid>{8DDC4127-7B66-45EB-8727-8E36AB98D9C4}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="C:\Users\elvio\Downloads\xContact\xContact\APIXContact.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="GravarVersao\GravarVersao.dproj">
             <Dependencies/>
         </Projects>
@@ -20,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="APIXContact">
-        <MSBuild Projects="C:\Users\elvio\Downloads\xContact\xContact\APIXContact.dproj"/>
-    </Target>
-    <Target Name="APIXContact:Clean">
-        <MSBuild Projects="C:\Users\elvio\Downloads\xContact\xContact\APIXContact.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="APIXContact:Make">
-        <MSBuild Projects="C:\Users\elvio\Downloads\xContact\xContact\APIXContact.dproj" Targets="Make"/>
-    </Target>
     <Target Name="GravarVersao">
         <MSBuild Projects="GravarVersao\GravarVersao.dproj"/>
     </Target>
@@ -48,13 +36,13 @@
         <MSBuild Projects="AtualizarVersao\AtualizarVersao.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="APIXContact;GravarVersao;AtualizarVersao"/>
+        <CallTarget Targets="GravarVersao;AtualizarVersao"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="APIXContact:Clean;GravarVersao:Clean;AtualizarVersao:Clean"/>
+        <CallTarget Targets="GravarVersao:Clean;AtualizarVersao:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="APIXContact:Make;GravarVersao:Make;AtualizarVersao:Make"/>
+        <CallTarget Targets="GravarVersao:Make;AtualizarVersao:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

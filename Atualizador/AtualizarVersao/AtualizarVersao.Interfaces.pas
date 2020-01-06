@@ -10,6 +10,8 @@ type
     function AtualizarVersao: IAtualizarVersaoInterfaces;
     function ClienteAtualizado: Boolean;
     function SetStatus(Value: TevStatus):IAtualizarVersaoInterfaces;
+    function GravarErro(Value: String): IAtualizarVersaoInterfaces;
+    function GravarLog(Value: String): IAtualizarVersaoInterfaces;
   end;
 
 var

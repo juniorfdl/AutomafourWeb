@@ -56,8 +56,17 @@ end;
 
 procedure TfPrincipal.ExecutarAtualizacao;
 begin
-  oAtualizarVersaoFacade.SetStatus(AtualizarStatus);
-  oAtualizarVersaoFacade.AtualizarVersao;
+  try
+    oAtualizarVersaoFacade.SetStatus(AtualizarStatus);
+    oAtualizarVersaoFacade.AtualizarVersao;
+  except
+    on E: Exception do
+    begin
+      AtualizarStatus(E.Message,0,0);
+      oAtualizarVersaoFacade.GravarErro(E.Message);
+      raise;
+    end;
+  end;
   AtualizarStatus('Sistema atualizado com sucesso',0,0);
   Sleep(2000);
   Close;

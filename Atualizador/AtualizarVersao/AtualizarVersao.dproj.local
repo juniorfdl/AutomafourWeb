@@ -2,32 +2,32 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/08/31 14:42:34.000.312,=C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2019/08/31 14:44:36.000.335,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.dfm=C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Unit3.dfm</Transaction>
-    <Transaction>2019/08/31 14:44:36.000.335,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas=C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2019/08/31 14:46:40.000.589,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj=C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Project3.dproj</Transaction>
+    <Transaction>2019/08/31 14:44:36.000.335,C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Unit3.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas</Transaction>
+    <Transaction>2019/08/31 14:44:36.000.335,C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Unit3.dfm=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.dfm</Transaction>
+    <Transaction>2019/08/31 14:46:40.000.589,C:\Users\elvio\Documents\Embarcadero\Studio\Projects\Project3.dproj=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.dproj</Transaction>
     <Transaction>2019/08/31 22:45:20.000.146,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas=</Transaction>
     <Transaction>2019/08/31 22:45:35.000.944,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/08/31 22:46:24.000.161,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.dfm=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.dfm</Transaction>
-    <Transaction>2019/08/31 22:46:24.000.161,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas</Transaction>
-    <Transaction>2019/09/01 09:00:14.000.992,=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Interfaces.pas</Transaction>
+    <Transaction>2019/08/31 22:46:24.000.161,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/08/31 22:46:24.000.161,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\uPrincipal.dfm=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.dfm</Transaction>
     <Transaction>2019/09/01 09:00:14.000.961,=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Impl.pas</Transaction>
+    <Transaction>2019/09/01 09:00:14.000.992,=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.RestApi.Client.Interfaces.pas</Transaction>
     <Transaction>2019/09/01 09:00:15.000.056,=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.VersaoApp.pas</Transaction>
     <Transaction>2019/09/01 09:00:15.000.024,=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.SmartPointer.pas</Transaction>
     <Transaction>2019/09/01 09:01:13.000.653,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 09:02:15.000.169,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/09/01 09:02:15.000.169,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Facade.pas</Transaction>
     <Transaction>2019/09/01 10:31:11.000.053,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 10:31:34.000.299,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas</Transaction>
+    <Transaction>2019/09/01 10:31:34.000.299,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\DadosConf.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
     <Transaction>2019/09/01 11:17:44.000.176,=C:\ProjetosWeb2.0\DataSnap\Source\Core\ormbr.jsonutils.datasnap.pas</Transaction>
     <Transaction>2019/09/01 11:18:20.000.710,=C:\ProjetosWeb2.0\DataSnap\Source\Core\ormbr.rest.json.pas</Transaction>
     <Transaction>2019/09/01 11:18:48.000.967,=C:\ProjetosWeb2.0\DataSnap\Source\Core\ormbr.json.pas</Transaction>
     <Transaction>2019/09/01 11:19:15.000.788,=C:\ProjetosWeb2.0\DataSnap\Source\Core\ormbr.mapping.rttiutils.pas</Transaction>
     <Transaction>2019/09/01 12:45:25.000.876,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 12:45:42.000.855,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/09/01 12:45:42.000.855,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Interfaces.pas</Transaction>
     <Transaction>2019/09/01 13:36:20.000.929,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 13:36:48.000.049,C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/09/01 13:36:48.000.049,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.pas</Transaction>
     <Transaction>2019/09/01 13:37:20.000.698,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 13:37:37.000.590,C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/09/01 13:37:37.000.590,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\Luar\Luar.Utils.FTP.Interfaces.pas</Transaction>
     <Transaction>2019/09/01 15:03:54.000.885,=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
-    <Transaction>2019/09/01 15:04:13.000.258,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Eventos.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas</Transaction>
+    <Transaction>2019/09/01 15:04:13.000.258,C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\Unit1.pas=C:\ProjetosWeb\Automafour\Atualizador\AtualizarVersao\AtualizarVersao.Eventos.pas</Transaction>
   </Transactions>
 </BorlandProject>

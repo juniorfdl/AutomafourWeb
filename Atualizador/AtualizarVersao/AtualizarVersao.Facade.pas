@@ -9,7 +9,7 @@ uses Luar.Utils.SmartPointer,
   ormbr.jsonutils.DataSnap,
   ormbr.rest.Json, AtualizarVersao.Interfaces,
   Luar.Utils.FTP, AtualizarVersao.Eventos, Luar.Utils.FTP.Interfaces,
-  ShellAPI, Windows, Luar.Utils.VersaoApp;
+  ShellAPI, Windows, Luar.Utils.VersaoApp, System.Zip;
 
 Type
   TAtualizarVersaoFacade = Class(TInterfacedObject, IAtualizarVersaoInterfaces)
@@ -21,7 +21,8 @@ Type
     fDadosConf: TDadosConf;
     fevStatus: TevStatus;
     fPastaOrigem:String;
-
+    fCOD_CADPESSOA: String;
+    fCOD_CADVERSAO: String;
     oLuarUtilsFTP: ILuarUtilsFTPInterfaces;
 
     procedure BaixarArquivos;
@@ -34,6 +35,10 @@ Type
     procedure CopiarArquivosOrigem;
     procedure AbrirVersao;
     procedure SalvarDataAtualizacao;
+    procedure DescompactarArquivo(const pArquivo, pPastaDestino: String);
+    procedure SalvarAtualizacaoServidor;
+    function GravarErro(Value: String): IAtualizarVersaoInterfaces;
+    function GravarLog(Value: String): IAtualizarVersaoInterfaces;
   public
     constructor create(const pDocCliente:String; const pApp:String);
     destructor Destroy; override;
@@ -43,7 +48,24 @@ Type
 
 implementation
 
+uses
+  System.JSON;
+
 { TAtualizarVersaoFacade }
+
+procedure TAtualizarVersaoFacade.DescompactarArquivo(const pArquivo: String;
+  const pPastaDestino: String);
+var
+  z: TSmartPointer<TZipFile>;
+begin
+  if fileExists(pArquivo) then
+  begin
+    z.Value.Open(pArquivo, zmRead);
+    z.Value.ExtractAll(pPastaDestino);
+    z.Value.Close;
+  end;
+end;
+
 function TAtualizarVersaoFacade.AtualizarVersao: IAtualizarVersaoInterfaces;
 var
   vIPFTP:String;
@@ -58,6 +80,7 @@ begin
   if Copy(fPastaOrigem,1,1) = '/' then
     Delete(fPastaOrigem,1,1);
 
+  GravarLog('AtualizarVersao: '+ vIPFTP);
   Status('Conectando: '+ vIPFTP, 0, 0);
   oLuarUtilsFTP := TLuarUtilsFTP.New(vIPFTP, fDadosConf.FTP_USER, fDadosConf.FTP_PASS).Conectar;
   oLuarUtilsFTP.SetStatus(fevStatus);
@@ -65,10 +88,13 @@ begin
   BaixarArquivos;
   DerrubarAplicacao;
   CopiarArquivosOrigem;
+  SalvarAtualizacaoServidor;
+  SalvarDataAtualizacao;
 end;
 
 procedure TAtualizarVersaoFacade.BaixarArquivos;
 begin
+  GravarLog('BaixarArquivos');
   Status('Localizado pasta: '+ fPastaOrigem, 0, 0);
   oLuarUtilsFTP.BaixarDaPasta(fPastaOrigem,
     fCaminhoDestino
@@ -78,6 +104,7 @@ end;
 function TAtualizarVersaoFacade.ClienteAtualizado: Boolean;
 var
   vEndPoint, vRet, vVersaoAtualAPP:String;
+  oRet: TJSonObject;
 begin
   if fDadosConf.DATA_ATUALIZACAO = FormatDateTime('dd/mm/yyyy', Now) then
   begin
@@ -89,6 +116,7 @@ begin
     Exit(True);
   end;
 
+  try
   FDocCliente:= fDadosConf.DOC_CLI;
   FApp := fDadosConf.APP;
 
@@ -104,13 +132,26 @@ begin
   vEndPoint:= fDadosConf.CONSULTA_VERSAO;
   vEndPoint:= Format(vEndPoint,[FApp, FDocCliente, vVersaoAtualAPP]);
 
+  GravarLog('ClienteAtualizado: '+ fDadosConf.BASE_URL+'/'+vEndPoint);
   vRet:= '';
-  TLuarRestApiClientImpl.New(fDadosConf.BASE_URL)
+  oRet := TLuarRestApiClientImpl.New(fDadosConf.BASE_URL)
       .SetResource(vEndPoint)
       .Get
-      .GetRetorno.TryGetValue('mensagem_erro', vRet);
+      .GetRetorno;
+
+  GravarLog('ClienteAtualizado: '+ oRet.ToJSON);
+  oRet.TryGetValue('mensagem_erro', vRet);
+  oRet.TryGetValue('COD_CADPESSOA', fCOD_CADPESSOA);
+  oRet.TryGetValue('COD_CADVERSAO', fCOD_CADVERSAO);
 
   Result := not(Pos('Cliente nao atualizado', vRet) > 0);
+  except
+    on E: Exception do
+    begin
+      GravarErro(E.Message);
+      raise;
+    end;
+  end;
 end;
 
 procedure TAtualizarVersaoFacade.CopiarArquivosOrigem;
@@ -146,21 +187,32 @@ begin
         CopyFile(PChar(fPATH_APP+'\'+vNomeArq+'.old'), PChar(vCaminhoOld+'\'+vNomeArq), false);
       end;
 
-      CopyFile(PChar(fCaminhoDestino+'\'+vNomeArq), PChar(fPATH_APP+'\'+vNomeArq), false);
+      if (Pos('.zip', LowerCase(vNomeArq)) > 0) then
+      begin
+        DescompactarArquivo(fCaminhoDestino+'\'+vNomeArq, fPATH_APP);
+      end
+      else
+        CopyFile(PChar(fCaminhoDestino+'\'+vNomeArq), PChar(fPATH_APP+'\'+vNomeArq), false);
     end;
   end;
-
-  SalvarDataAtualizacao;
 end;
 
 constructor TAtualizarVersaoFacade.create(const pDocCliente, pApp: String);
 begin
-  fDocCliente:= pDocCliente;
-  fApp := pApp;
-  fPATH_APP:= ExtractFileDir(Application.ExeName);
-  fCaminhoDestino :=
+  try
+    fDocCliente:= pDocCliente;
+    fApp := pApp;
+    fPATH_APP:= ExtractFileDir(Application.ExeName);
+    fCaminhoDestino :=
     fPATH_APP+'\New'+FormatDateTime('ddmmyyyy', Now);
-  GetConf;
+    GetConf;
+  except
+    on E: Exception do
+    begin
+      GravarErro(E.Message);
+      raise;
+    end;
+  end;
 end;
 
 procedure TAtualizarVersaoFacade.DerrubarAplicacao;
@@ -191,13 +243,39 @@ end;
 
 procedure TAtualizarVersaoFacade.GetConf;
 begin
-  if not FileExists(ExtractFilePath(ParamStr(0))+'\Conf.Json') then
+  {if not FileExists(ExtractFilePath(ParamStr(0))+'\Conf.Json') then
   begin
     raise Exception.Create('Arquivo Conf.Json não configurado');
-  end;
+  end;}
 
-  fDadosConf := TDadosConf.New(ExtractFilePath(ParamStr(0))+'\Conf.Json');
-  
+  fDadosConf := TDadosConf.New;
+end;
+
+function TAtualizarVersaoFacade.GravarErro(
+  Value: String): IAtualizarVersaoInterfaces;
+var
+  oList: TSmartPointer<TStringList>;
+begin
+  Result := Self;
+  if FileExists(ExtractFileDir(Application.ExeName)+ '\erroatualizacao.txt') then
+    oList.Value.LoadFromFile(ExtractFileDir(Application.ExeName)+ '\erroatualizacao.txt');
+
+  oList.Value.Add(Value);
+  oList.Value.SaveToFile(ExtractFileDir(Application.ExeName)+ '\erroatualizacao.txt');
+end;
+
+function TAtualizarVersaoFacade.GravarLog(
+  Value: String): IAtualizarVersaoInterfaces;
+var
+  oList: TSmartPointer<TStringList>;
+begin
+  Result := Self;
+  if FileExists(ExtractFileDir(Application.ExeName)+ '\logatualizacao.txt') then
+    oList.Value.LoadFromFile(ExtractFileDir(Application.ExeName)+ '\logatualizacao.txt');
+
+
+  oList.Value.Add(FormatDateTime('dd/mm/yyyy', Now)+': '+Value);
+  oList.Value.SaveToFile(ExtractFileDir(Application.ExeName)+ '\logatualizacao.txt');
 end;
 
 class function TAtualizarVersaoFacade.New(const pDocCliente, pApp: String):IAtualizarVersaoInterfaces;
@@ -205,13 +283,29 @@ begin
   Result := Self.create(pDocCliente, pApp);
 end;
 
+procedure TAtualizarVersaoFacade.SalvarAtualizacaoServidor;
+var
+  JsonPost: TSmartPointer<TJSONObject>;
+begin
+  JsonPost.Value.AddPair('COD_CADPESSOA',fCOD_CADPESSOA);
+  JsonPost.Value.AddPair('COD_CADVERSAO',fCOD_CADVERSAO);
+  JsonPost.Value.AddPair('DADOS_MAQUINA', fDadosConf.COMPUTADOR);
+  JsonPost.Value.AddPair('TERMINAL', fDadosConf.TERMINAL);
+
+  GravarLog('SalvarAtualizacaoServidor: '+ JsonPost.Value.ToJSON);
+
+  TLuarRestApiClientImpl.New(fDadosConf.BASE_URL)
+      .SetResource('CAD_PESSOAVERSAO')
+      .Post(JsonPost).GetRetorno.ToJSON;
+end;
+
 procedure TAtualizarVersaoFacade.SalvarDataAtualizacao;
 var
   oList: TSmartPointer<TStringList>;
 begin
   fDadosConf.DATA_ATUALIZACAO := FormatDateTime('dd/mm/yyyy', Now);
-  oList.Value.Text := TORMBrJson.ObjectToJsonString(fDadosConf);
-  oList.Value.SaveToFile(ExtractFilePath(ParamStr(0))+'\Conf.Json');
+  oList.Value.Text := fDadosConf.DATA_ATUALIZACAO;
+  oList.Value.SaveToFile(ExtractFileDir(Application.ExeName)+ '\UltimaAtualizacao.txt');
 end;
 
 procedure TAtualizarVersaoFacade.AbrirVersao;
@@ -233,6 +327,7 @@ procedure TAtualizarVersaoFacade.Status(Value: String; Posicao, Max:Integer);
 begin
   if Assigned(fevStatus) then
   begin
+    GravarLog('Status: '+ Value);
     fevStatus(Value, Posicao, Max);
   end;
 end;

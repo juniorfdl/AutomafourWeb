@@ -8,37 +8,42 @@ uses
   AtualizarVersao.Eventos, IdComponent;
 
 type
-  TLuarUtilsFTP = class (TInterfacedObject, ILuarUtilsFTPInterfaces)
+  TLuarUtilsFTP = class(TInterfacedObject, ILuarUtilsFTPInterfaces)
   strict private
     fListaArquivos: TSmartPointer<TStringList>;
     fWorkCountMax: Int64;
-    fNomeArquivo:String;
+    fNomeArquivo: String;
     fFTP: String;
     fIdFTP: TIdFTP;
     fevStatus: TevStatus;
-    function SetStatus(Value: TevStatus):ILuarUtilsFTPInterfaces;
+    function SetStatus(Value: TevStatus): ILuarUtilsFTPInterfaces;
     function GetListaArquivos: TStringList;
 
-    procedure WorkBeginEvent(ASender: TObject; AWorkMode: TWorkMode; AWorkCountMax: Int64);
+    procedure WorkBeginEvent(ASender: TObject; AWorkMode: TWorkMode;
+      AWorkCountMax: Int64);
     procedure WorkEndEvent(ASender: TObject; AWorkMode: TWorkMode);
-    procedure WorkEvent(ASender: TObject; AWorkMode: TWorkMode; AWorkCount: Int64);
+    procedure WorkEvent(ASender: TObject; AWorkMode: TWorkMode;
+      AWorkCount: Int64);
   public
     function Conectar: ILuarUtilsFTPInterfaces;
-    function BaixarArquivo(const pOrigem, pDestino:String): ILuarUtilsFTPInterfaces;
-    function BaixarDaPasta(const pPasta, pPastaDestino:String): ILuarUtilsFTPInterfaces;
+    function BaixarArquivo(const pOrigem, pDestino: String)
+      : ILuarUtilsFTPInterfaces;
+    function BaixarDaPasta(const pPasta, pPastaDestino: String)
+      : ILuarUtilsFTPInterfaces;
 
-    constructor create(const FTP, FTP_USER, FTP_PASS:String);
+    constructor create(const FTP, FTP_USER, FTP_PASS: String);
     destructor destroy; override;
 
-    class function New(const FTP, FTP_USER, FTP_PASS:String): ILuarUtilsFTPInterfaces;
+    class function New(const FTP, FTP_USER, FTP_PASS: String)
+      : ILuarUtilsFTPInterfaces;
   end;
 
 implementation
 
 { TLuarUtilsFTP }
 
-function TLuarUtilsFTP.BaixarArquivo(const pOrigem,
-  pDestino: String): ILuarUtilsFTPInterfaces;
+function TLuarUtilsFTP.BaixarArquivo(const pOrigem, pDestino: String)
+  : ILuarUtilsFTPInterfaces;
 begin
   Result := Self;
 end;
@@ -52,7 +57,7 @@ end;
 constructor TLuarUtilsFTP.create(const FTP, FTP_USER, FTP_PASS: String);
 begin
   fFTP := FTP;
-  fIdFTP := TIdFTP.Create(nil);
+  fIdFTP := TIdFTP.create(nil);
   fIdFTP.OnWork := WorkEvent;
   fIdFTP.OnWorkBegin := WorkBeginEvent;
   fIdFTP.OnWorkEnd := WorkEndEvent;
@@ -81,32 +86,34 @@ begin
   Result := fListaArquivos;
 end;
 
-class function TLuarUtilsFTP.New(const FTP, FTP_USER, FTP_PASS: String): ILuarUtilsFTPInterfaces;
+class function TLuarUtilsFTP.New(const FTP, FTP_USER, FTP_PASS: String)
+  : ILuarUtilsFTPInterfaces;
 begin
   Result := Self.create(FTP, FTP_USER, FTP_PASS);
 end;
 
-function TLuarUtilsFTP.BaixarDaPasta(
-  const pPasta, pPastaDestino: String): ILuarUtilsFTPInterfaces;
+function TLuarUtilsFTP.BaixarDaPasta(const pPasta, pPastaDestino: String)
+  : ILuarUtilsFTPInterfaces;
 var
-  indice:Integer;
+  indice: Integer;
 begin
   Result := Self;
 
   if not DirectoryExists(pPastaDestino) then
     MkDir(pPastaDestino);
 
-  fListaArquivos := TStringList.Create;
+  fListaArquivos := TStringList.create;
   fIdFTP.ChangeDir(pPasta);
-  fIdFTP.List(fListaArquivos.Value,'',false);
+  fIdFTP.List(fListaArquivos.Value, '', false);
 
-  for indice:= 0 to fListaArquivos.Value.Count -1 do
+  for indice := 0 to fListaArquivos.Value.Count - 1 do
   begin
-    fNomeArquivo:= fListaArquivos.Value.Strings[indice];
-    if (UpperCase(fNomeArquivo) <> 'CONF.JSON')and(UpperCase(fNomeArquivo) <> 'GRAVARVERSAO.EXE') then
+    fNomeArquivo := fListaArquivos.Value.Strings[indice];
+    if (UpperCase(fNomeArquivo) <> 'CONF.JSON') and
+      (UpperCase(fNomeArquivo) <> 'GRAVARVERSAO.EXE') then
     begin
       fWorkCountMax := fIdFTP.Size(fNomeArquivo);
-      fIdFTP.Get(fNomeArquivo,pPastaDestino + '\' + fNomeArquivo,true);
+      fIdFTP.Get(fNomeArquivo, pPastaDestino + '\' + fNomeArquivo, true);
     end;
   end;
 
@@ -127,7 +134,7 @@ begin
   if AWorkCountMax > 0 then
     fWorkCountMax := AWorkCountMax;
 
-  fevStatus('Baixando: '+ fNomeArquivo, 0, fWorkCountMax);
+  fevStatus('Baixando: ' + fNomeArquivo, 0, fWorkCountMax);
 end;
 
 procedure TLuarUtilsFTP.WorkEndEvent(ASender: TObject; AWorkMode: TWorkMode);
@@ -135,7 +142,8 @@ begin
   if not Assigned(fevStatus) then
     Exit;
 
-  fevStatus('Arquivo: '+fNomeArquivo+' baixado', fWorkCountMax, fWorkCountMax);
+  fevStatus('Arquivo: ' + fNomeArquivo + ' baixado', fWorkCountMax,
+    fWorkCountMax);
 end;
 
 procedure TLuarUtilsFTP.WorkEvent(ASender: TObject; AWorkMode: TWorkMode;
@@ -144,7 +152,7 @@ begin
   if not Assigned(fevStatus) then
     Exit;
 
-  fevStatus('Baixando: '+ fNomeArquivo+' . . .', AWorkCount, fWorkCountMax);
+  fevStatus('Baixando: ' + fNomeArquivo + ' . . .', AWorkCount, fWorkCountMax);
 end;
 
 end.

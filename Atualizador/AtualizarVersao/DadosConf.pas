@@ -22,6 +22,9 @@ type
     fFTP_USER: String;
     fDATA_ATUALIZACAO: String;
     fDOC_CLI: String;
+  private
+    fCOMPUTADOR: String;
+    fTERMINAL: String;
   public
     property BASE_URL: String read fBASE_URL write fBASE_URL;
     property CAD_VERSAO: String read fCAD_VERSAO write fCAD_VERSAO;
@@ -33,11 +36,17 @@ type
     property FTP_PASS:String read fFTP_PASS write fFTP_PASS;
     property DOC_CLI:String read fDOC_CLI write fDOC_CLI;
     property DATA_ATUALIZACAO:String read fDATA_ATUALIZACAO write fDATA_ATUALIZACAO;
+    property TERMINAL: String read fTERMINAL write fTERMINAL;
+    property COMPUTADOR: String read fCOMPUTADOR write fCOMPUTADOR;
 
-    class function New(const pPath:String): TDadosConf;
+    class function New(const pPath:String): TDadosConf; overload;
+    class function New: TDadosConf; overload;
   end;
 
 implementation
+
+uses
+  Winapi.Windows;
 
 { TDadosConf }
 
@@ -47,6 +56,26 @@ var
 begin
   oConf.Value.LoadFromFile(pPath);
   Result:= TORMBrJson.JsonToObject<TDadosConf>(oConf.Value.Text);
+
+end;
+
+class function TDadosConf.New: TDadosConf;
+type
+  tMetodo = function: PAnsiChar; //stdcall;
+var
+  DLLProg:Cardinal;
+  Metodo: tMetodo;
+  Retorno: PAnsiChar;
+begin
+  DLLProg := 0;
+  try
+    DLLProg := LoadLibrary(Pchar('CONFIG_ATUALIZADOR.dll'));
+    @Metodo := GetProcAddress(DLLProg, PAnsiChar('BUSCAR'));
+    Retorno := Metodo;
+    Result := TORMBrJson.JsonToObject<TDadosConf>(Retorno);
+  finally
+    FreeLibrary(DLLProg);
+  end;
 end;
 
 end.
